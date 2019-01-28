@@ -25,6 +25,7 @@ public class Canvas
     /**
      * Factory method to get the canvas singleton object.
      */
+    
     public static Canvas getCanvas()
     {
         if(canvasSingleton == null) {

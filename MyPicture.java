@@ -1,17 +1,9 @@
 /**
- * This class represents a simple picture. You can draw the picture using
- * the draw method. But wait, there's more: being an electronic picture, it
- * can be changed. You can set it to black-and-white display and back to
- * colors (only after it's been drawn, of course).
- *
- * This class was written as an early example for teaching Java with BlueJ.
- * 
- * @author  Michael Kšlling and David J. Barnes
- * @version 2016.02.29
+ * g00248431, referenced from Picture
  */
 
 
-public class Picture
+public class MyPicture
 {  
     private Square wall;
     private Square window;
@@ -22,7 +14,7 @@ public class Picture
     /**
      * Constructor for objects of class Picture
      */
-    public Picture()
+    public MyPicture()
     {
         wall = new Square();
         window = new Square();
@@ -34,16 +26,51 @@ public class Picture
     /**
      * Draw this picture.
      */
+    
+    
+                public void targetBoard(){
+                
+                int size = 300;
+                
+                String color = "red";
+                
+                
+                
+     for (int i = 0; i < 60; i++){
+         
+         
+         Circle target = new Circle();
+         
+         if (color == "red"){
+             
+             color = "white";
+             
+            } else if (color == "white"){
+                
+             color = "red";
+             
+            }
+         
+         
+         
+         target.changeSize(size);
+         target.changeColor(color);
+         target.makeVisible();
+         
+         size-=10;
+        }
+    }
+    
     public void draw()
     {
         if(!drawn) {
             wall.moveHorizontal(-140);
             wall.moveVertical(20);
             wall.changeSize(120);
-            wall.changeColor("blue");
+            wall.changeColor("black");
             wall.makeVisible();
             
-            window.changeColor("black");
+            window.changeColor("white");
             window.moveHorizontal(-120);
             window.moveVertical(40);
             window.changeSize(40);
@@ -53,6 +80,7 @@ public class Picture
             roof.moveHorizontal(20);
             roof.moveVertical(-60);
             roof.makeVisible();
+            roof.changeColor("red");
     
             sun.changeColor("yellow");
             sun.moveHorizontal(100);
@@ -63,19 +91,7 @@ public class Picture
         }
     }
     
-            public void targetBoard(){
-     for (int i = 0; i < 10; i++){
-         
-         float size = 10;
-         Circle target = new Circle();
-         
-         target.changeColor("red");
-         
-         target.changeSize(10);
-         
-         
-        }
-    }
+
 
     /**
      * Change this picture to black/white display

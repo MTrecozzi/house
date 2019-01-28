@@ -36,6 +36,13 @@ public class Circle
         draw();
     }
     
+        public String GetColor()
+    {
+        return this.color;
+    }
+    
+
+    
     /**
      * Make this circle invisible. If it was already invisible, do nothing.
      */
